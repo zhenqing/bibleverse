@@ -12,7 +12,13 @@
 default: &default
   adapter: sqlite3
   pool: 5
+<<<<<<< HEAD
   timeout: 5000
+=======
+  username: root
+  password: 1234
+  host: localhost
+>>>>>>> 0626e80ace0f2d5c375d32dbe5ddac04ecbcb450
 
 development:
   <<: *default

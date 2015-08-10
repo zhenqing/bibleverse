@@ -11,6 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 0) do
 
+=======
+ActiveRecord::Schema.define(version: 20150729214342) do
+
+  create_table "imagefiles", force: :cascade do |t|
+    t.string   "size",            limit: 255
+    t.integer  "image_id",        limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "image_file_path", limit: 255
+  end
+
+  add_index "imagefiles", ["image_id"], name: "index_imagefiles_on_image_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.string   "desc",            limit: 255
+    t.string   "author",          limit: 255
+    t.string   "verse",           limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "image_file_path", limit: 255
+  end
+
+  add_foreign_key "imagefiles", "images"
+>>>>>>> 0626e80ace0f2d5c375d32dbe5ddac04ecbcb450
 end

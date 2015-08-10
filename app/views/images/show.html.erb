@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1><%= @image.name %></h1>
+
+Created by<span> <%= @image.author %> </span>
+
+<p><%= @image.desc %></p>
+
+<% @image.imagefiles.each do |imagefile|%>
+<p><%= imagefile.size %></p>
+<img src="<%= imagefile.image_file_path %>">
+
+<% end %>
+
+<p>Relative verse: <%= @image.verse %></p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>
